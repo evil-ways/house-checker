@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 class Scraper:
     '''
-    This class implements an easy way to scrape the main home selling/leasing/buying sites in Portugal
+    This class implements an easy way to scrape the main home market sites in Portugal
     Website already suppoted:
         -- olx
         -- custojusto
