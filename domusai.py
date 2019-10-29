@@ -48,7 +48,7 @@ class Scraper:
                     self.houses.append(link.find('a', href=True)['href'])
             elif self.site == 'custojusto':
                 links = soup.find_all('div', class_="container_related")
-                print(links)
+                
                 for link in links:
                     try:
                         self.houses.append(link.find('a').get('href'))
