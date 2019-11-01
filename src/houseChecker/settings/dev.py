@@ -1,6 +1,5 @@
 from houseChecker.settings.base import *
 
-
-DEBUG=False
+DEBUG=True
 
 SECRET_KEY = 'SECRETKEYHERE'
