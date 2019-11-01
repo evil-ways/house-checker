@@ -1,1 +1,1 @@
-web: gunicorn houseChecker.wsgi --log-file -
+web: gunicorn src.houseChecker.wsgi --log-file -
