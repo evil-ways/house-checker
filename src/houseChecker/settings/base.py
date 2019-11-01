@@ -66,19 +66,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static_dist'),)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'house_checker_dev',
-        'USER': 'housecheckerdev',
-        'PASSWORD': 'housecheckerdev',
-        'HOST': 'localhost',
-        'PORT': 5432,
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
