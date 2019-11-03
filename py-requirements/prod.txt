@@ -2,3 +2,6 @@
 
 # Gunicorn
 gunicorn==19.9.0
+
+# error handling
+sentry-sdk==0.13.1
