@@ -1,6 +1,6 @@
 from houseChecker.settings.base import *
 
-DEBUG=True
+DEBUG = True
 
 SECRET_KEY = 'SECRETKEYHERE'
 
@@ -19,3 +19,7 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+
+REDIS_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = REDIS_URL
