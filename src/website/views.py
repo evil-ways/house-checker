@@ -2,12 +2,17 @@ from django.views.generic import TemplateView
 
 from scraper.scraper.spiders.imovirtual_comprar_spider import ImovirtualSpider
 from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
+from scraper.scraper.settings import USER_AGENT, HTTPCACHE_ENABLED 
 
 
 
 class IndexView(TemplateView):
-    process = CrawlerProcess(get_project_settings())
+    #$print(settings['USER_AGENT'])
+    #print('O'*50)
+    process = CrawlerProcess({
+        'USER_AGENT':USER_AGENT,
+        'HTTPCACHE_ENABLED':HTTPCACHE_ENABLED
+        })
     process.crawl(ImovirtualSpider)
     process.start()
 
