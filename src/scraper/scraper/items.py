@@ -7,10 +7,10 @@
 
 import scrapy
 from scrapy_djangoitem import DjangoItem
-from src.website.models import Imovirtual
+from website.models import Imovirtual
 
 
-class ScraperItem(scrapy.Item):
+class ScraperItem(DjangoItem):
     # define the fields for your item here like:
     # name = scrapy.Field()
-   django_model = Imovirtual
+    django_model = Imovirtual

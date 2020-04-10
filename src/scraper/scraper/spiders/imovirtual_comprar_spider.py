@@ -1,16 +1,17 @@
 import scrapy
-from scraper.items import ScraperItem
-import time
+from scraper.scraper.items import ScraperItem
+from scraper.scraper.settings import USER_AGENT
+
 #from config import URL
-URL = "https://www.imovirtual.com/anuncios/?search[homepage_ads]=1&page={}"
+URL = "https://www.imovirtual.com/comprar/apartamento/"
 
 
 class ImovirtualSpider(scrapy.Spider):
-    name = "Imovirtual"
-
+    name = "Imovirtual_Comprar_Apartamento"
+    
     #allowed_domains = ['https://www.imovirtual.com/']
-    start_urls = [URL.format(i) for i in range(1,30)]
-    #start_urls = [URL.format(1)]
+    start_urls = [URL]
+    
     def parse(self, response):
         # process each house link
         urls = response.css('.offer-item-details').xpath('header/h3/a/@href').extract() 
@@ -27,11 +28,13 @@ class ImovirtualSpider(scrapy.Spider):
         # yield request
     
     def parse_housepage(self, response):
-        #house = HousescraperItem()
-        house = dict()
+        house = ScraperItem()
+        #house = dict()
+        
         house['Titulo'] = response.xpath('/html/body/div/article/header/div[1]/div/div/h1/text()').extract() 
         house['Preco'] = response.xpath('/html/body/div/article/header/div[2]/div[1]/div[2]/text()').extract()[0].replace('€', '').replace(' ', '')
-        house['Alugar'] = response.xpath('/html/body/div/article/header/div[2]/div[1]/div[2]/small/text()').extract()
+        house['Alugar'] = 'Nao'
+        house['Tipo'] = 'apartamento'
         house['PrecoArea'] = response.xpath('/html/body/div/article/header/div[2]/div[2]/div/text()').extract()[0] 
         house['Localizacao'] = response.xpath('/html/body/div/article/header/div[1]/div/div/div/a/text()').extract()[0]
 
@@ -50,5 +53,4 @@ class ImovirtualSpider(scrapy.Spider):
             house['Imobiliaria'] = response.xpath('/html/body/div/article/div[3]/div[2]/div[4]/ul/li[2]/strong/text()').extract()[0]
             
         house['Descricao'] = " ".join(response.xpath('/html/body/div/article/div[3]/div[1]/section[2]/div[1]/text()').extract())    
-        time.sleep(1.5)
         yield house

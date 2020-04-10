@@ -10,4 +10,5 @@ class Imovirtual(models.Model):
     Imobiliaria = models.TextField()
     Descricao = models.TextField()
     Tipo = models.TextField()
+    Alugar = models.TextField()
 
