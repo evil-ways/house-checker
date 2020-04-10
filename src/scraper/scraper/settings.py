@@ -12,7 +12,7 @@ import os
 import sys
 
 
-# DJANGO INTEGRATION
+# # DJANGO INTEGRATION
 sys.path.append(os.path.dirname(os.path.abspath('.')))
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'houseChecker.settings.base'
@@ -78,7 +78,7 @@ COOKIES_ENABLED = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'scraper.pipelines.ScraperPipeline': 300,
+    'scraper.scraper.pipelines.ScraperPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

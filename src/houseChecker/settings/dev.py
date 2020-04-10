@@ -19,3 +19,10 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+MONGO_SETTINGS ={
+    'MONGODB_SERVER':'localhost',
+    'MONGODB_PORT':27017,
+    'MONGODB_DB':'house_checker_dev_mongo',
+    'MONGODB_COLLECTION':'Imovirtual',
+}

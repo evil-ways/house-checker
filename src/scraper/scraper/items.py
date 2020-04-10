@@ -6,11 +6,20 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-from scrapy_djangoitem import DjangoItem
-from website.models import Imovirtual
+from scrapy.item import Item, Field
 
 
-class ScraperItem(DjangoItem):
+
+class ScraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    django_model = Imovirtual
+    Titulo = Field()
+    Preco = Field()
+    PrecoArea = Field()
+    Localizacao = Field()
+    Propriedades = Field()
+    Caracteristicas = Field()
+    Imobiliaria = Field()
+    Descricao = Field()
+    Tipo = Field()
+    Alugar = Field()
