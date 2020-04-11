@@ -81,6 +81,11 @@ ITEM_PIPELINES = {
     'scraper.scraper.pipelines.ScraperPipeline': 300,
 }
 
+ITEM_PIPELINES_OLX = {
+    'scraper.scraper.pipelines.ScraperPipelineOLX': 300,
+}
+
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
@@ -101,3 +106,42 @@ HTTPCACHE_ENABLED = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+URLS_IMOVIRTUAL = [
+        "https://www.imovirtual.com/comprar/apartamento/",
+        "https://www.imovirtual.com/arrendar/apartamento/",
+        "https://www.imovirtual.com/ferias/apartamento/",
+
+        "https://www.imovirtual.com/comprar/moradia/",
+        "https://www.imovirtual.com/arrendar/moradia/",
+        "https://www.imovirtual.com/ferias/moradia/",
+
+        "https://www.imovirtual.com/arrendar/quarto/",
+
+        "https://www.imovirtual.com/comprar/terreno/",
+        "https://www.imovirtual.com/arrendar/terreno/",
+
+        "https://www.imovirtual.com/comprar/loja/",
+        "https://www.imovirtual.com/arrendar/loja/",
+
+        "https://www.imovirtual.com/comprar/armazem/",
+        "https://www.imovirtual.com/arrendar/armazem/",
+
+        "https://www.imovirtual.com/comprar/garagem/",
+        "https://www.imovirtual.com/arrendar/garagem/",
+
+        "https://www.imovirtual.com/comprar/escritorio/",
+        "https://www.imovirtual.com/arrendar/escritorio/",
+
+        "https://www.imovirtual.com/comprar/predio/",
+        "https://www.imovirtual.com/arrendar/predio/",
+
+        "https://www.imovirtual.com/comprar/quintaeherdade/",
+        "https://www.imovirtual.com/arrendar/quintaeherdade/",
+
+        "https://www.imovirtual.com/comprar/trespasse/",
+
+    ]
+
+URLS_OLX = []

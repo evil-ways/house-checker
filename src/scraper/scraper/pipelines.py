@@ -19,7 +19,27 @@ class ScraperPipeline(object):
             MONGO_SETTINGS['MONGODB_PORT']
         )
         db = connection[MONGO_SETTINGS['MONGODB_DB']]
-        self.collection = db[MONGO_SETTINGS['MONGODB_COLLECTION']]
+        self.collection = db['Imovirtual']
+
+    def process_item(self, item, spider):
+        valid = True
+        for data in item:
+            if not data:
+                valid = False
+                raise DropItem("Missing {0}!".format(data))
+        if valid:
+            self.collection.insert(dict(item))
+        return item
+
+class ScraperPipelineOLX(object):
+
+    def __init__(self):
+        connection = pymongo.MongoClient(
+            MONGO_SETTINGS['MONGODB_SERVER'],
+            MONGO_SETTINGS['MONGODB_PORT']
+        )
+        db = connection[MONGO_SETTINGS['MONGODB_DB']]
+        self.collection = db['OLX']
 
     def process_item(self, item, spider):
         valid = True

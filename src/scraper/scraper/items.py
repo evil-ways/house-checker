@@ -23,3 +23,17 @@ class ScraperItem(scrapy.Item):
     Descricao = Field()
     Tipo = Field()
     Alugar = Field()
+
+class ScraperItemOLX(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    Titulo = Field()
+    Preco = Field()
+    #PrecoArea = Field()
+    Localizacao = Field()
+    Propriedades = Field()
+    #Caracteristicas = Field()
+    #Imobiliaria = Field()
+    Descricao = Field()
+    #Tipo = Field()
+    #Alugar = Field()
