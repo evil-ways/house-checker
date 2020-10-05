@@ -1,2 +1,1 @@
-web: cd src && gunicorn --debug houseChecker.wsgi:application
-
+web: cd src && gunicorn houseChecker.wsgi:application --log-file -
