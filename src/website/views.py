@@ -11,5 +11,5 @@ class IndexView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         test_task.delay()
-        LOGGER.debug('batataaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaas')
+        LOGGER.error('batataaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaas')
         return super(IndexView, self).get(request, args, kwargs)
